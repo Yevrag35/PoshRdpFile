@@ -2,31 +2,28 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Attributes\TypeAttribute.cs" />
-    <Compile Remove="RdpSettingsDictionary.cs" />
-    <Compile Remove="SettingType.cs" />
-  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Debug.ps1" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="RdpSettingsDictionary.cs" />
-    <None Include="SettingType.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="Debug.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Attributes\TypeAttribute.cs" />
   </ItemGroup>
 
 	<ItemGroup>
