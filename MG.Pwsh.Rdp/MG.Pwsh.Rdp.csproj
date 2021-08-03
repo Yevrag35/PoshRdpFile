@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Attributes\TypeAttribute.cs" />
+    <Compile Remove="RdpSettingsDictionary.cs" />
+    <Compile Remove="SettingType.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Debug.ps1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="RdpSettingsDictionary.cs" />
+    <None Include="SettingType.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Debug.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Attributes\TypeAttribute.cs" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="PowerShellStandard.Library" Version="5.1.0" />
+	</ItemGroup>
+
+</Project>
