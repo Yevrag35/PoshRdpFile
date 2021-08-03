@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -138,6 +137,10 @@ namespace MG.Pwsh.Rdp
             }
             else
                 throw new InvalidCastException("Unable to cast " + nameof(value) + " to either type 'string' or 'int'.");
+        }
+        public void ClearExtras()
+        {
+            this.Extras?.Clear();
         }
         private static IDictionary CloneDictionary(IDictionary dictionary)
         {
